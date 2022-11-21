@@ -1,19 +1,18 @@
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        System.out.println("Mostrar numero float e int");
 
-        System.out.println("Ingrese el monto deseado a solicitar");
-        int capitalSolicitado = in.nextInt();
-        double interes = 0.50;
-        System.out.println("Ingrese los meses en los que devolvera el prestamo");
-        int periodo = in.nextInt();
+        float valorFlotante = 3.1416f;
 
-        double interesAPagarFloat = (capitalSolicitado*interes*periodo);
-        int interesAPagarInt = (int) (capitalSolicitado*interes*periodo);
+        int resultado = redondearFloat(valorFlotante);
 
-        System.out.println("El monto total en float a pagar es de " + interesAPagarFloat);
-        System.out.println("El monto total en int a pagar es de " + interesAPagarInt);
+        System.out.println("El  numero redondeado es " + resultado);
+        System.out.println("El numero float es " + (valorFlotante - resultado));
+
+    }
+
+    private static int redondearFloat(float valorFlotante) {
+        return Math.round(valorFlotante);
     }
 }
